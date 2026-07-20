@@ -1,0 +1,216 @@
+@import "tailwindcss";
+
+:root {
+  --navy: #050A14;
+  --deep-navy: #0A132F;
+  --neon-blue: #00D4FF;
+  --neon-cyan: #00F0FF;
+  --accent: #3B82F6;
+}
+
+body {
+  font-family: 'Inter', system_ui, sans-serif;
+}
+
+/* Premium Glassmorphism */
+.glass {
+  background: rgba(10, 19, 47, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+}
+
+.glass-light {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(24px);
+}
+
+/* Neon Glowing Buttons - Premium SaaS Style */
+.cta-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  padding: 1rem 2.25rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #fff;
+  background: linear-gradient(135deg, #00D4FF 0%, #0099FF 50%, #0066FF 100%);
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: 
+    0 0 0 1px rgba(0, 212, 255, 0.3),
+    0 10px 30px -10px rgba(0, 212, 255, 0.5),
+    0 0 60px -10px rgba(0, 212, 255, 0.4);
+  overflow: hidden;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 
+    0 0 0 1px rgba(0, 212, 255, 0.5),
+    0 20px 40px -10px rgba(0, 212, 255, 0.6),
+    0 0 90px -5px rgba(0, 212, 255, 0.6);
+}
+
+.cta-button:active {
+  transform: translateY(0) scale(0.985);
+}
+
+.cta-button::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -100%;
+  width: 50%;
+  height: 200%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,0.35),
+    transparent
+  );
+  transition: 0.6s;
+}
+
+.cta-button:hover::before {
+  left: 250%;
+}
+
+/* Smaller variant for nav and secondary */
+.cta-button-sm {
+  padding: 0.625rem 1.5rem;
+  font-size: 0.95rem;
+  box-shadow: 
+    0 0 0 1px rgba(0, 212, 255, 0.25),
+    0 8px 20px -8px rgba(0, 212, 255, 0.45);
+}
+
+.cta-button-sm:hover {
+  box-shadow: 
+    0 0 0 1px rgba(0, 212, 255, 0.45),
+    0 12px 30px -8px rgba(0, 212, 255, 0.55);
+}
+
+/* Card styles */
+.feature-card {
+  transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1), 
+              box-shadow 0.3s cubic-bezier(0.23, 1, 0.32, 1),
+              border-color 0.2s;
+}
+
+.feature-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(0, 212, 255, 0.25);
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.4);
+}
+
+/* Testimonial cards */
+.testimonial-card {
+  transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), 
+              box-shadow 0.4s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-4px);
+}
+
+/* FAQ Accordion */
+.faq-question {
+  transition: all 0.2s ease;
+}
+
+.faq-question:hover {
+  color: #00D4FF;
+}
+
+/* Benefit badge */
+.benefit-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  background: rgba(0, 212, 255, 0.08);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  border-radius: 9999px;
+  color: #E0F2FE;
+  transition: all 0.2s ease;
+}
+
+.benefit-badge:hover {
+  background: rgba(0, 212, 255, 0.15);
+  border-color: rgba(0, 212, 255, 0.35);
+  transform: translateY(-1px);
+}
+
+/* Premium product box */
+.product-box {
+  transition: transform 0.6s cubic-bezier(0.23, 1.0, 0.32, 1), 
+              box-shadow 0.6s ease;
+  filter: drop-shadow(0 35px 60px -15px rgb(0 0 0 / 0.6));
+}
+
+.product-box:hover {
+  transform: rotate(-2deg) scale(1.015) translateY(-8px);
+}
+
+/* Email form glass */
+.email-form {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(24px);
+}
+
+/* Scroll reveal base */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.scroll-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Navbar */
+.navbar {
+  transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+  background: rgba(5, 10, 20, 0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Guarantee badge */
+.guarantee-badge {
+  background: linear-gradient(135deg, #0A132F 0%, #050A14 100%);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+/* Section dividers */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(255,255,255,0.08), transparent);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .cta-button {
+    padding: 0.95rem 1.85rem;
+    font-size: 1rem;
+  }
+}
+
+/* Subtle ambient glow */
+.glow-cyan {
+  box-shadow: 0 0 25px rgba(0, 212, 255, 0.2);
+}
